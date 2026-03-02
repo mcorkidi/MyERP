@@ -1,0 +1,8 @@
+<ul class="nav flex-column p-3">
+  <li class="nav-item"><a class="nav-link" href="/">Dashboard</a></li>
+  {% if request.user.is_superuser or request.user.has_perm('core.view_company') %}<li><a class="nav-link" href="/core/companies/">Core</a></li>{% endif %}
+  {% if request.user.is_superuser or request.user.has_perm('hr.view_employee') %}<li><a class="nav-link" href="/hr/employees/">HR</a></li>{% endif %}
+  {% if request.user.is_superuser or request.user.has_perm('inventory.view_product') %}<li><a class="nav-link" href="/inventory/products/">Inventory</a></li>{% endif %}
+  {% if request.user.is_superuser or request.user.has_perm('sales.view_salesorder') %}<li><a class="nav-link" href="/sales/orders/">Sales</a></li>{% endif %}
+  <li><a class="nav-link" href="/reports/sales/">Reports</a></li>
+</ul>
