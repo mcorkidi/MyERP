@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Dashboard</h1>
+<div class="row g-3">
+  <div class="col-md-3"><div class="card p-3">Sales KPI</div></div>
+  <div class="col-md-3"><div class="card p-3">Revenue KPI</div></div>
+  <div class="col-md-3"><div class="card p-3">Inventory KPI</div></div>
+  <div class="col-md-3"><div class="card p-3">Payroll KPI</div></div>
+</div>
+<canvas id="kpiChart" class="mt-4"></canvas>
+<script>new Chart(document.getElementById('kpiChart'),{type:'bar',data:{labels:['Sales','Revenue','Inventory','Payroll'],datasets:[{label:'KPIs',data:[12,19,7,9]}]}})</script>
+{% endblock %}

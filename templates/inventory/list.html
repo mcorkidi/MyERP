@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}<h2>Inventory List</h2>
+<form class='row g-2 mb-3'><div class='col'><input class='form-control' name='q' placeholder='Search'></div><div class='col-auto'><button class='btn btn-outline-primary'>Filter</button></div></form>
+<table class='table table-striped'><tbody>{% for obj in object_list %}<tr><td>{{ obj }}</td><td><a class='btn btn-sm btn-primary' href='{{ obj.id }}/'>View</a></td></tr>{% endfor %}</tbody></table>
+{% include 'components/pagination.html' %}
+{% endblock %}
